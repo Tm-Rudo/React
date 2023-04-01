@@ -1,0 +1,106 @@
+.add{
+    background-color:cadetblue;
+    width: 600px;
+    height: 450px;
+    position: fixed;
+}
+
+.add h1{
+    text-align: center;
+    padding-top: 40px;
+}
+
+.add button{
+    float: right;
+    margin-left: 20px;
+}
+
+.add button:hover{
+    background-color: cornsilk;
+    color: black;    
+}
+
+
+
+.form{
+    /* background-color: rgb(208, 114, 114); */
+    width: 400px;
+    height: 400px;
+    padding-top: 30px;
+    margin-left: 40px;
+    /* padding-left: 180px; */
+    
+}
+
+#bt{
+    background-color: rgb(203, 192, 67);
+    float: right;
+    margin-left: 10px;
+}
+
+/* new */
+.formedit{
+  /* background-color: aqua; */
+  margin-left: 110px;
+  width: 350px;
+  height: 280px;
+}
+
+.formedit Button{
+  margin-top: 20px;
+  /* float: right; */
+  margin-left: 20px;
+}
+
+/* <div className='add'>
+
+<h1>Add Country</h1>
+    <div className="form">
+    <Form>
+<FormGroup>
+<Label >
+  Name
+</Label>
+<Input
+  id="nameid"
+  name="name"
+  placeholder="name"
+  // type="email"
+/>
+</FormGroup>
+
+<FormGroup>
+<Label >
+  Code
+</Label>
+<Input
+  id="codeid"
+  name="code"
+  placeholder="code"
+  // type="email"
+/>
+</FormGroup>
+
+<FormGroup>
+<Label >
+Description
+</Label>
+<Input
+  id="descriptionid"
+  name="description"
+  placeholder="description"
+  // type="email"
+/>
+</FormGroup>
+
+<Button>
+Submit
+</Button>
+
+<Button>
+Cancel
+</Button>
+
+</Form>
+    </div>
+</div> */

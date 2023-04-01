@@ -1,0 +1,31 @@
+          {CountryData.map((CountryData) => (
+            <tr key={CountryData.code} >
+              {/* <td>{row.id}</td>   */}
+              <td>{CountryData.name}</td>
+              <td>{CountryData.code}</td>
+              <td>{CountryData.description}</td>
+              <td>
+                {/* <Button color="primary">Edit</Button> */}
+                <Edit/>
+              </td>
+              <td>
+              
+                {/* <Button color="dangeD:\Thuc Tap\Bai_Tap\reactjs\node_modulesr"  onClick={handleShow}>Delete</Button> */}
+                <Delete/>
+                {/* <Modal open = {Delete_Country}/> */}
+              </td>
+            </tr>
+          ))}
+
+
+          //Delete
+
+          {countries.map(country => (
+            <Button variant="contained" 
+                onClick={() => {
+                  handleDelete(country.code);
+            }}
+            style={{marginLeft: '70px', marginTop: '20px'}}>
+              Delete
+            </Button>
+            ))}
