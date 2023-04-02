@@ -1,0 +1,59 @@
+//  const [addForm, setAddForm] = useState({
+//     name : '',
+//     code: '',
+//     description: '',
+//   })
+
+//     const handleAddForm = (event) =>{
+//       event.preventDefault();
+
+//       const fieldName = event.target.getAttribute('nameC');
+//       const fieldValue= event.target.value;
+
+//       const newFormData = {...addForm};
+//       newFormData[fieldName] = fieldValue;
+
+//       setAddForm(newFormData);
+//     }
+
+//     const handleAddFormSubmit = (event) => {
+//       event.preventDefault();
+
+//       const newContact = {
+//         // id: nanoid,
+//         name: addForm.name,
+//         code: addForm.code,
+//         description: addForm.description,
+//       };
+
+//       const newContacts = [...countries, newContact];
+//       setCountries(newContacts);
+//       alert(newContacts);
+//     }
+
+{/* <TextField 
+name="nameC" 
+label="Name"
+variant="outlined" 
+required = "required"
+onChange={""}
+
+/> 
+
+<TextField 
+  name="codeC" 
+  label="Code" 
+  variant="outlined"
+  required = "required"
+   onChange={""}            
+/> 
+
+
+<TextField 
+  name="descriptionC" 
+  label="Description" 
+  variant="outlined" 
+  required = "required"
+  onChange={""}
+
+/> */}

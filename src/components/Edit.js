@@ -9,6 +9,8 @@ import { FormLabel, TextField } from '@mui/material';
 // import add_country from '../assets/css/add_country.css';
 import CountryData from '../CountryData/CountryData';
 import { Input } from '@mui/material';
+import { useFormik } from 'formik';
+
 
 const style = {
   position: 'absolute',
@@ -27,36 +29,12 @@ export default function Edit({ data , countries, setCountries }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
-
- //lưu trữ giá trị của các trường input
-      const [formData, setFormData] = useState({
-        id: '',
-        name: '',
-        code: '',
-        description: ''
-});
-
-  //lấy dữ liệu đẩy vào form edit
-
-  const GetData = id => {
-    const dataChoose = countries.filter(country => country.id === id);
-    setFormData({
-      id: dataChoose.id,
-      name: dataChoose.name,
-      code: dataChoose.code,
-      description: dataChoose.description,
-    });
-    console.log(setFormData);
-  };
-
-
-  //đẩy dữ liệu về table
-
+    
 
 const handEdit = id =>{
       const test = countries.filter(country => country.id === id);
       console.log(test);
+
 
 };
 
@@ -67,7 +45,8 @@ const handEdit = id =>{
       <Button variant="contained" 
         onClick={  handleOpen} >
       
-      Edit</Button>
+          Edit
+      </Button>
       <Modal
         open={open}
         onClose={handleClose}
@@ -80,39 +59,31 @@ const handEdit = id =>{
         <div className="formedit">
            <form >
 
-           <TextField 
-                name = 'txtId'
-                label="id" 
-                variant="outlined"
-                // onChange={onChangeNewId}
-                // value = {NewId}
-                value={formData.id}
-                disabled
-             /> 
 
             <TextField 
-               name = 'txtName'
+                id = "nameCountry"
+                name = "nameCountry"
                 label="Name" 
                 variant="outlined"
-                // // onChange={onChangeNewName}
-                // value={NewName}
-                value={formData.name}
+
+
              /> 
             <TextField 
-               name = 'txtCode'
+                id = "codeCountry"
+                name = 'codeCountry'
                 label="Code" 
                 variant="outlined"
-                // // onChange={onChangeNewCode}
-                // value={NewCode}
-                value={formData.code}
+
              /> 
             <TextField 
-               name="txtDes" 
+                id = "desCountry"
+                name="desCountry" 
                 label="Description" 
                 variant="outlined" 
+
                 // onChange={onChangeNewDes}
                 // value={NewDes}
-                value={formData.description}
+                // value={formData.description}
             />
           <br />
             <Button variant="contained" style={{}} onClick = {() => handEdit(data.id)}>Submit</Button>

@@ -1,0 +1,28 @@
+/*
+
+//lưu trữ giá trị của các trường input
+   const [formData, setFormData] = useState({
+    id: '',
+    name: '',
+    code: '',
+    description: ''
+});
+
+
+  
+  //lấy dữ liệu đẩy vào form edit
+
+  const GetData = id => {
+    const dataChoose = countries.filter(country => country.id === id);
+    setFormData({
+      id: dataChoose.id,
+      name: dataChoose.name,
+      code: dataChoose.code,
+      description: dataChoose.description,
+    });
+    console.log(setFormData);
+  };
+
+
+
+  */

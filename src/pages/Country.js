@@ -42,7 +42,7 @@ return (
           <thead>
             <tr>
               {/* <th>#</th> */}
-              <th>ID</th>
+              {/* <th>ID</th> */}
               <th>Name</th>
               <th>Code</th>
               <th>Description</th>
@@ -53,7 +53,7 @@ return (
           <tbody>
             {countries.map(s => (
               <tr key={s.id}>
-                  <td>{s.id}</td>
+                  {/* <td>{s.id}</td> */}
 
                   <td>{s.name}</td>
                   <td>{s.code}</td>

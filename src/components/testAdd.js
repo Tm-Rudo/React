@@ -10,7 +10,7 @@ import CountryData from '../CountryData/CountryData.js';
 import {useState} from 'react';
 import {nanoid} from 'nanoid';
 import { useFormik } from 'formik';
-import * as Yup from 'yup';
+import * as Yup from "yup";
 import { v4 as uuidv4 } from 'uuid';
 
 const style = {
@@ -26,18 +26,14 @@ const style = {
   p: 4,
 };
 
-const Add = () => {
+export default function Add({ data , countries, setCountries }){
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const [countries, setContries] = useState(CountryData);
-
-
-
-  // const[name, setNameCountry] = useState("");
-  // const[code, setCodeCountry] = useState("");
-  // const[description, setDesCountry] = useState("");
+  const[name, setNameCountry] = useState("");
+  const[code, setCodeCountry] = useState("");
+  const[description, setDesCountry] = useState("");
 
   // console.log(nameCountry);
   // console.log(codeCountry);
@@ -51,25 +47,37 @@ const Add = () => {
         description : "" 
     },
 //yup
-    validationSchema: Yup.object({
-      name: Yup.string()
-      .max(20, "Must be 20 characters or less")
-      .required("required"),
+    // validationSchema: Yup.object({
+    //     nameCountry: Yup.string()
+    //       .max(20, "Must be 20 characters or less")
+    //       .require("Required"),
 
-      code: Yup.string()
-      .max(15, "Must be 15 characters or less")
-      .required("required"),
+    //       codeCountry: Yup.string()
+    //       .max(20, "Must be 20 characters or less")
+    //       .require("Required"),
 
-      description: Yup.string()
-      .max(30, "Must be 30 characters or less")
-      .required("required")
-    }),
-    //onSubmit: (values) => {
-    
+    //       desCountry: Yup.string()
+    //       .max(20, "Must be 20 characters or less")
+    //       .require("Required"),
+    // }),
+
     onSubmit: (values) => {
-console.log(values);
-     }
-  
+     // setCountries(values.nameCountry, values.codeCountry, values.desCountry);
+    //    console.log(values);
+    //  console.log(setCountries);
+      //  setContries([...countries, values])
+      // console.log(setContries);
+
+      setCountries((prevCountries) => ({
+        ...prevCountries,
+        id: uuidv4(),
+        name: values.name,
+        code: values.code,
+        description: values.description
+      }));
+      console.log(setCountries);
+    },
+
   });
 
 
@@ -98,12 +106,10 @@ console.log(values);
                       variant="outlined"
                       // onChange={(e)=>setNameCountry(e.target.value)}
                       onChange={formik.handleChange}
-                      // onBlur={formik.handleBlur}
                       value = {formik.values.name}
                       // value = {nameCountry}
-                      
                   /> 
-                { formik.touched.name && formik.errors.name ? <p>{formik.errors.name}</p> : null}
+                {formik.errors.nameCountry ? <p>{formik.errors.name}</p> : null};
 
                   <TextField 
                       id = "code"
@@ -111,11 +117,9 @@ console.log(values);
                       label="Code" 
                       variant="outlined"
                       onChange={formik.handleChange}
-                      // onBlur={formik.handleBlur}
-                      value = {formik.values.code}     
+                      value = {formik.values.code}
+                    
                   /> 
-                {formik.touched.code && formik.errors.code ? <p>{formik.errors.code}</p> : null}
-
 
 
                   <TextField 
@@ -124,20 +128,13 @@ console.log(values);
                       label="Description" 
                       variant="outlined" 
                       onChange={formik.handleChange}
-                      // onBlur={formik.handleBlur} lưu giữ vị trí
                       value = {formik.values.description}
                       // onChange={onChangeNewDes}
                       // value={NewDes}
                       // value={formData.description}
                   />
-                {formik.touched.description && formik.errors.description ? <p>{formik.errors.description}</p> : null}
-
-
-                {/* {formik.errors.description && formik.touched.description
-                 && (<p style={{fontSize :"0.5px"}}>{formik.errors.name}</p>)} */}
-
           <br />
-            <Button variant="contained"  type="submit" >Submit</Button>
+            <Button variant="contained" type="submit" >Submit</Button>
         <Button variant="contained" style={{marginLeft: '10px'}} onClick={handleClose}>Cancel</Button>
            </form>
         
@@ -147,4 +144,3 @@ console.log(values);
     </div>
   );
 }
-export default Add;

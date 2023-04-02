@@ -1,4 +1,4 @@
-          {CountryData.map((CountryData) => (
+          <!-- {CountryData.map((CountryData) => (
             <tr key={CountryData.code} >
               {/* <td>{row.id}</td>   */}
               <td>{CountryData.name}</td>
@@ -28,4 +28,4 @@
             style={{marginLeft: '70px', marginTop: '20px'}}>
               Delete
             </Button>
-            ))}
+            ))} -->

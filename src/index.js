@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Country from './pages/Country';
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -15,6 +16,7 @@ root.render(
       <Route path='/' element = { <App />}>
         <Route path='/home' element = { <Home />}/> 
         <Route path='/Country' element = { <Country />}/> 
+        
       </Route>
   </Routes>
     </BrowserRouter>
